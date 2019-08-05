@@ -1,0 +1,4 @@
+#Directory used to build applications
+build/
+#Data required for C/C++ language server extension to work
+.ccls-cache/
