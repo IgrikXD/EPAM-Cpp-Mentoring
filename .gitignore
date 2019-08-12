@@ -2,3 +2,7 @@
 build/
 #Data required for C/C++ language server extension to work
 .ccls-cache/
+#CMake debug information
+Debug/
+#ccls compile commands
+compile_commands.json
