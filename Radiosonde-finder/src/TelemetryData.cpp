@@ -4,7 +4,8 @@ TelemetryData::TelemetryData() : m_gps_data {}, m_time_data {}, m_vertical_speed
 
 } 
 
-TelemetryData::TelemetryData(GpsData gps_data, TimeData time_data,  double vertical_speed) 
+TelemetryData::TelemetryData(const GpsData gps_data, const TimeData time_data, 
+    const double vertical_speed) 
     : m_gps_data {gps_data}, m_time_data {time_data}, m_vertical_speed {vertical_speed} {
 
 } 
