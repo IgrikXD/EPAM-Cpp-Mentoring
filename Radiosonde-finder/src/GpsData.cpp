@@ -10,7 +10,12 @@ GpsData::GpsData(double latitude, double longitude, double altitude, double spee
 
 }
 
-double GpsData::getLatitude(void) {
+GpsData::GpsData(const GpsData & gps_data) : m_latitude {gps_data.m_altitude}, m_longitude {gps_data.m_longitude}, 
+    m_altitude {gps_data.m_altitude}, m_speed {gps_data.m_speed}, m_course {gps_data.m_course} {
+
+}
+
+double GpsData::getLatitude(void) const {
 
     return m_latitude;
 

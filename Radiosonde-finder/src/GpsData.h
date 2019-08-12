@@ -10,17 +10,19 @@ class GpsData {
         double m_course;
     public:
         GpsData();
-        GpsData(double latitude, double longitude, double altitude, double speed, double course);
-        double getLatitude(void);
-        double getLongitude(void);
-        double getAltitude(void);
-        double getSpeed(void);
-        double getCourse(void);
-        void setLatitude(double latitude);
-        void setLongitude(double longitude);
-        void setAltitude(double altitude);
-        void setSpeed(double speed);
-        void setCourse(double course);
+        GpsData(const double latitude, const double longitude, const double altitude, 
+            const double speed, const double course);
+        GpsData(const GpsData & gps_data);
+        double getLatitude(void) const;
+        double getLongitude(void) const;
+        double getAltitude(void) const;
+        double getSpeed(void) const;
+        double getCourse(void) const;
+        void setLatitude(const double latitude);
+        void setLongitude(const double longitude);
+        void setAltitude(const double altitude);
+        void setSpeed(const double speed);
+        void setCourse(const double course);
 };
 
 #endif

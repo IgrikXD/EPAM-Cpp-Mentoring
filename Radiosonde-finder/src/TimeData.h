@@ -9,16 +9,17 @@ class TimeData {
         unsigned short m_milliseconds;
     public:
         TimeData();
-        TimeData(unsigned short hours, unsigned short minutes, unsigned short seconds, 
-            unsigned short milliseconds);
-        unsigned short getHours(void);
-        unsigned short getMinutes(void);
-        unsigned short getSeconds(void);
-        unsigned short getMilliseconds(void);
-        void setHours(unsigned short hours);
-        void setMinutes(unsigned short minutes);
-        void setSeconds(unsigned short seconds);
-        void setMilliseconds(unsigned short milliseconds);
+        TimeData(const unsigned short hours, const unsigned short minutes, const unsigned short seconds, 
+            const unsigned short milliseconds);
+        TimeData(const TimeData & time_data);
+        unsigned short getHours(void) const;
+        unsigned short getMinutes(void) const;
+        unsigned short getSeconds(void) const;
+        unsigned short getMilliseconds(void) const;
+        void setHours(const unsigned short hours);
+        void setMinutes(const unsigned short minutes);
+        void setSeconds(const unsigned short seconds);
+        void setMilliseconds(const unsigned short milliseconds);
 };
 
 #endif
