@@ -1,8 +1,8 @@
 #ifndef TELEMETRYDATA_H
 #define TELEMETRYDATA_H
 
-#include "GpsData.h"
-#include "TimeData.h"
+#include "Gps/GpsData.h"
+#include "Time/TimeData.h"
 
 class TelemetryData {
     private:
