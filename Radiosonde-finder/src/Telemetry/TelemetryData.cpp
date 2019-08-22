@@ -1,6 +1,6 @@
 #include "TelemetryData.h"
 
-TelemetryData::TelemetryData() : m_gps_data {}, m_time_data {}, m_vertical_speed {0} {
+TelemetryData::TelemetryData() : m_gps_data {}, m_time_data {}, m_vertical_speed {} {
 
 } 
 
