@@ -28,7 +28,7 @@ double TelemetryData::getVerticalSpeed(void) const {
 
 }
 
-void TelemetryData::setGpsData(const GpsData gps_data) {
+void TelemetryData::setGpsData(const GpsData & gps_data) {
 
     m_gps_data.setLatitude(gps_data.getLatitude());
     m_gps_data.setLongitude(gps_data.getLongitude());
@@ -38,7 +38,7 @@ void TelemetryData::setGpsData(const GpsData gps_data) {
 
 }
 
-void TelemetryData::setTimeData(const TimeData time_data) {
+void TelemetryData::setTimeData(const TimeData & time_data) {
 
     m_time_data.setHours(time_data.getHours());
     m_time_data.setMinutes(time_data.getMinutes());

@@ -15,8 +15,8 @@ class TelemetryData {
         GpsData getGpsData(void) const;
         TimeData getTimeData(void) const;
         double getVerticalSpeed(void) const;
-        void setGpsData(const GpsData gps_data);
-        void setTimeData(const TimeData time_data);
+        void setGpsData(const GpsData & gps_data);
+        void setTimeData(const TimeData & time_data);
         void setVerticalSpeed(const double vertical_speed);
 };
 
