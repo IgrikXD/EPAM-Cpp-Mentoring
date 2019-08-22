@@ -42,7 +42,7 @@ std::string parseKmlFile(const std::string src_filename) {
 }
 
 void getGpsData(std::vector<GpsData> & dst_gps_data, const std::string & src_raw_coordinates) {
-    //Constant defining a symbol that divides blocks of GPS coordinates
+    //Delimiter blocks of GPS coordinates
     constexpr std::string_view delimiter {" "};
     //Vector storing a set of points of the route path of the radiosonde
     std::vector<std::string> gps_points;
@@ -58,8 +58,11 @@ void getGpsData(std::vector<GpsData> & dst_gps_data, const std::string & src_raw
             std::string::size_type offset {0};
 
             gps_point.setLatitude(std::stod(x, &offset));
+            //Removing a latitude string value from a GPS coordinate block
+            //"offset" indicates the position of the delimiter, which should also be removed
             x.erase(0, offset + 1);
             gps_point.setLongitude(std::stod(x, &offset));
+            //Removing a longitude string value from a GPS coordinate block
             x.erase(0, offset + 1);
             gps_point.setAltitude(std::stod(x));
 
