@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Bu1tton.qml</file>
+        <file>marker.png</file>
+    </qresource>
+</RCC>
