@@ -53,7 +53,6 @@ import QtQuick.Window 2.0
 import QtLocation 5.6
 import QtPositioning 5.6
 import QtQuick.Controls 2.5
-import QtQuick.Controls.Imagine 2.12
 
 Window {
     id: window
@@ -128,8 +127,12 @@ Window {
              }
         }
 
-        Column {
-            spacing: 2
+        Grid {
+
+            x: 4; anchors.top: target_map.top; anchors.topMargin: 3
+            rows: 2; columns: 1; spacing: 3
+
+            //spacing: 2
 
             Switch {
                 text: "Show sonde route"

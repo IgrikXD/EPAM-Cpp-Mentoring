@@ -1,6 +1,6 @@
 TEMPLATE = app
 
-QT += location
+QT += location quick quickcontrols2
 
 SOURCES += main.cpp
 

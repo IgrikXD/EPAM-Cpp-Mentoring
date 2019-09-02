@@ -51,10 +51,14 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QtLocation>
+#include <QQuickStyle>
 
 int main(int argc, char *argv[])
 {
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
+
+    QQuickStyle::setStyle("Imagine");
 
     QQmlApplicationEngine engine;
 
