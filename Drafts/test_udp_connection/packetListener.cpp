@@ -1,8 +1,11 @@
+#include <ctime>
 #include <iostream>
 #include <string_view>
 #include <boost/asio.hpp>
 
 constexpr unsigned udp_port {55673};
+
+std::string getCurrentTime(void);
 
 class UDPListener {
 
@@ -43,7 +46,7 @@ class UDPListener {
 				boost::asio::ip::udp::endpoint sender_endpoint;
 				int bytes = m_socket.receive_from(boost::asio::buffer(buff), sender_endpoint);
 				
-				std::cout << "Message received:" << std::endl;
+				std::cout << "Message received (" << getCurrentTime() << "):" << std::endl;
 				std::cout << std::string_view(buff, bytes) << std::endl;
 
 			}
@@ -61,5 +64,20 @@ int main(int argc, char * argv[]) {
 	udp_receiver.receive();
 
 	return 0;
+
+}
+
+std::string getCurrentTime(void) {
+
+	time_t rawtime;
+	tm * timeinfo;
+	char buffer[40];
+
+	time(&rawtime);
+	timeinfo = localtime(&rawtime);
+
+	strftime(buffer, 40, "%D, %X", timeinfo);
+	
+	return std::string(buffer);
 
 }
