@@ -6,3 +6,5 @@ build/
 Debug/
 #ccls compile commands
 compile_commands.json
+#vsode configs
+.vscode/
