@@ -53,13 +53,14 @@ import QtQuick.Window 2.0
 import QtLocation 5.6
 import QtPositioning 5.6
 import QtQuick.Controls 2.5
+import QtQuick.Controls.Imagine 2.12
 
 Window {
     id: window
     width: 512
     height: 512
     visible: true
-    title: qsTr("Radiosonde finder")
+    title: "Radiosonde finder"
 
     Plugin {
         id: mapPlugin
@@ -89,6 +90,19 @@ Window {
         }
 
         MapQuickItem {
+             id: start_point
+             coordinate: QtPositioning.coordinate(52.1211, 23.6738)
+
+             anchorPoint.x: image1.width * 0.5
+             anchorPoint.y: image1.height
+
+             sourceItem: Column {
+             Image {id:image0; source: "MarkerGreen.png"; width: 25; height: 36}
+             Text { text: "Start point"; font.bold: true }
+             }
+        }
+
+        MapQuickItem {
              id: last_frame
              coordinate: QtPositioning.coordinate(52.0101, 23.8276)
 
@@ -96,7 +110,7 @@ Window {
              anchorPoint.y: image1.height
 
              sourceItem: Column {
-             Image {id:image1; source: "marker.png" }
+             Image {id:image1; source: "MarkerRed.png"; width: 25; height: 36}
              Text { text: "Last data point"; font.bold: true }
              }
         }
@@ -109,7 +123,7 @@ Window {
              anchorPoint.y: image2.height
 
              sourceItem: Column {
-             Image {id: image2; source: "marker.png" }
+             Image {id: image2; source: "MarkerBlue.png"; width: 25; height: 36 }
              Text { text: "Landing point"; font.bold: true }
              }
         }
@@ -124,11 +138,13 @@ Window {
                     if (main_path.visible == true) {
                         main_path.visible = false
                         last_frame.visible = false
+                        start_point.visible = false
                     }
 
                     else {
                         main_path.visible = true
                         last_frame.visible = true
+                        start_point.visible = true
                     }
                 }
             }
@@ -151,22 +167,37 @@ Window {
 
         Grid {
             x: 4; anchors.bottom: target_map.bottom; anchors.bottomMargin: 20
-            rows: 1; columns: 2; spacing: 3
-
-            //Button { butText: "Finish"; onClicked: target_map.center = QtPositioning.coordinate(52.0101, 23.8276)}
-            Button {
-                text: "Finish";
-                height: 25
-                width: 60
-                onClicked: target_map.center = QtPositioning.coordinate(52.0101, 23.8276)
-            }
-            //Button { butText: "Start"; onClicked: target_map.center = QtPositioning.coordinate(52.1211, 23.6738)}
+            rows: 1; columns: 3; spacing: 3
             Button {
                 text: "Start";
                 height: 25
                 width: 60
-                onClicked: target_map.center = QtPositioning.coordinate(52.1211, 23.6738)
+                onClicked: {
+                    target_map.center = QtPositioning.coordinate(52.1211, 23.6738)
+                    target_map.zoomLevel = 16;
+                }
             }
+            //Button { butText: "Finish"; onClicked: target_map.center = QtPositioning.coordinate(52.0101, 23.8276)}
+            Button {
+                text: "Last frame";
+                height: 25
+                width: 60
+                onClicked: {
+                    target_map.center = QtPositioning.coordinate(52.0101, 23.8276)
+                    target_map.zoomLevel = 16;
+                }
+            }
+            Button {
+                text: "Landing";
+                height: 25
+                width: 60
+                onClicked: {
+                    target_map.center = QtPositioning.coordinate(52.0132, 23.8253)
+                    target_map.zoomLevel = 16;
+                }
+            }
+            //Button { butText: "Start"; onClicked: target_map.center = QtPositioning.coordinate(52.1211, 23.6738)}
+
         }
 
         Grid {
