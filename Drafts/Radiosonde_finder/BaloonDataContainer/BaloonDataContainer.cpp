@@ -18,6 +18,6 @@ QStringList BaloonDataContainer::getSondesId(void) const {
 }
 
 void BaloonDataContainer::receiveId(const QString src_new_id) {
-    if (this -> addSondeId(src_new_id) == 0)
+    if (addSondeId(src_new_id))
         emit idChanged();
 }
