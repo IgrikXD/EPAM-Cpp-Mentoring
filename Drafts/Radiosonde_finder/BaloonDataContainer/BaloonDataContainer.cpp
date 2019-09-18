@@ -6,10 +6,10 @@ int BaloonDataContainer::addSondeId(const QString & src_sonde_id) {
 
     for(QString & i : m_sondes_id)
         if (i == src_sonde_id)
-            return -1;
+            return 0;
 
     m_sondes_id.append(src_sonde_id);
-    return 0;
+    return 1;
 
 }
 

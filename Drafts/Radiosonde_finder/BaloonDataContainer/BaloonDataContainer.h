@@ -14,8 +14,8 @@ public:
     BaloonDataContainer(QObject * parent = nullptr);
     //Adding a new radiosonde ID to the container.
     //Returns value:
-    // 0 - if successfully;
-    // -1 - if ID already exists;
+    // 1 - if successfully;
+    // 0 - if ID already exists;
     int addSondeId(const QString & src_sonde_id);
     //Returns a QStringList container that contains the ID of all radiosondes.
     QStringList getSondesId(void) const;
