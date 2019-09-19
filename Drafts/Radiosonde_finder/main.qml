@@ -4,6 +4,9 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.5
 
 Window {
+
+    readonly property var id_filename: "ID_Data.rf"
+
     visible: true
     width: 640
     height: 480
@@ -38,7 +41,7 @@ Window {
             Layout.preferredWidth: 100
             Layout.preferredHeight: 25
             text: "Write to file"
-            onClicked: radiosondesList.writeToFile()
+            onClicked: radiosondesList.writeToFile(id_filename)
         }
 
         Button {
