@@ -34,6 +34,7 @@ Window {
             onClicked: {
                 radiosondesList.receiveId(newSondeId.text)
                 newSondeId.text = ""
+                newSondeId.placeholderText = "Enter sonde ID"
             }
         }
 
