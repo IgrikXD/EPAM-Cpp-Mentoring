@@ -5,7 +5,7 @@ import QtQuick.Controls 2.5
 
 Window {
 
-    readonly property var id_filename: "ID_Data.rf"
+    readonly property string id_filename: "ID_Data.rf"
 
     visible: true
     width: 640
