@@ -3,6 +3,9 @@
 
 #include <QObject>
 #include <QStringList>
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
 
 class BaloonDataContainer : public QObject{
     Q_OBJECT
@@ -25,6 +28,8 @@ signals:
 public slots:
     //Get string ID value from QML layer
     void receiveId(const QString src_new_id);
+    //Write all ID values to local file
+    void writeToFile(const QString & src_filename);
 };
 
 #endif // BALOONDATACONTAINER_H
