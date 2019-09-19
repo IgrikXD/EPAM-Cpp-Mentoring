@@ -28,7 +28,10 @@ Window {
             Layout.preferredWidth: 100
             Layout.preferredHeight: 25
             text: "Add"
-            onClicked: radiosondesList.receiveId(newSondeId.text)
+            onClicked: {
+                radiosondesList.receiveId(newSondeId.text)
+                newSondeId.text = ""
+            }
         }
 
         Button {
