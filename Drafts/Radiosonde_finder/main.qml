@@ -37,6 +37,13 @@ Window {
         Button {
             Layout.preferredWidth: 100
             Layout.preferredHeight: 25
+            text: "Write to file"
+            onClicked: radiosondesList.writeToFile()
+        }
+
+        Button {
+            Layout.preferredWidth: 100
+            Layout.preferredHeight: 25
             text: "Close"
             onClicked: Qt.quit()
         }
