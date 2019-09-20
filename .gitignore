@@ -8,3 +8,5 @@ Debug/
 compile_commands.json
 #vsode configs
 .vscode/
+#CMake config log by QT Creator
+CMakeLists.txt.user
