@@ -4,7 +4,7 @@ BaloonDataContainer::BaloonDataContainer(QObject * parent) : QObject{parent} { }
 
 int BaloonDataContainer::addSondeId(const QString & src_sonde_id) {
 
-    for(QString & i : m_sondes_id)
+    for(const QString & i : m_sondes_id)
         if (i == src_sonde_id)
             return 0;
 
